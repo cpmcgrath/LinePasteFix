@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="c5717f52-dce2-4611-be5c-7a27c33a1306" xmlns="http://schemas.microsoft.com/dsltools/VSPackageDesigner">
+  <commandTable>
+    <rootHasCommandTable Id="a2363b0b-ab89-427f-b36d-7bf3d6984f30">
+      <commandTable Id="a8b42c4a-8de3-4117-9add-f565d8ed5c26" packageGuid="c5717f52-dce2-4611-be5c-7a27c33a1306" commandSetGuid="a2363b0b-ab89-427f-b36d-7bf3d6984f30" imagesGuid="a8b42c4a-8de3-4117-9add-f565d8ed5c26" safeProjectName="LinePasteFix" counter="1" />
+    </rootHasCommandTable>
+  </commandTable>
+  <userInterface>
+    <rootHasUserInterface Id="56a91385-c08c-4357-a961-36e4a022995f">
+      <userInterface Id="30c957fd-297b-4e34-a8c1-ac8a08cb56ea" />
+    </rootHasUserInterface>
+  </userInterface>
+</root>
