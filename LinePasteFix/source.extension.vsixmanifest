@@ -1,43 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Vsix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
-    <Identifier Id="LinePasteFix.CMcG.a2363b0b-ab89-427f-b36d-7bf3d6984f30">
-        <Name>Line Paste Fix</Name>
-        <Author>Chris McGrath</Author>
-        <Version>7.0</Version>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="LinePasteFix.CMcG.a2363b0b-ab89-427f-b36d-7bf3d6984f30" Version="1.0" Language="en-US" Publisher="Chris McGrath" />
+        <DisplayName>Line Paste Fix</DisplayName>
         <Description xml:space="preserve">In VS2010 when you paste a line copy, the caret goes to the beginning of the line. This extension mimics VS2008 behaviour of keeping it at the same place as before.</Description>
-        <Locale>1033</Locale>
+        <MoreInfo>https://marketplace.visualstudio.com/items?itemName=cpmcgrath.LinePasteFix</MoreInfo>
         <License>license.txt</License>
-        <SupportedProducts>
-            <VisualStudio Version="10.0">
-                <Edition>Ultimate</Edition>
-                <Edition>Premium</Edition>
-                <Edition>Pro</Edition>
-            </VisualStudio>
-            <VisualStudio Version="11.0">
-                <Edition>Ultimate</Edition>
-                <Edition>Premium</Edition>
-                <Edition>Pro</Edition>
-            </VisualStudio>
-            <VisualStudio Version="12.0">
-                <Edition>Ultimate</Edition>
-                <Edition>Premium</Edition>
-                <Edition>Pro</Edition>
-            </VisualStudio>
-            <VisualStudio Version="14.0">
-                <Edition>Ultimate</Edition>
-                <Edition>Premium</Edition>
-                <Edition>Pro</Edition>
-            </VisualStudio>
-        </SupportedProducts>
-        <SupportedFrameworkRuntimeEdition MinVersion="4.0" MaxVersion="4.0" />
-    </Identifier>
-    <References>
-        <Reference Id="Microsoft.VisualStudio.MPF" MinVersion="10.0">
-            <Name>Visual Studio MPF</Name>
-        </Reference>
-    </References>
-    <Content>
-        <VsPackage>|%CurrentProject%;PkgdefProjectOutputGroup|</VsPackage>
-        <MefComponent>|%CurrentProject%|</MefComponent>
-    </Content>
-</Vsix>
+        <Tags>Bug, Bug fix, Clipboard</Tags>
+    </Metadata>
+    <Installation InstalledByMsi="false">
+        <InstallationTarget Version="[11.0,15.0]" Id="Microsoft.VisualStudio.Community" />
+        <InstallationTarget Version="[11.0,15.0)" Id="Microsoft.VisualStudio.Enterprise" />
+        <InstallationTarget Version="[11.0,15.0)" Id="Microsoft.VisualStudio.Pro" />
+        <InstallationTarget Version="[11.0,15.0)" Id="Microsoft.VisualStudio.Premium" />
+        <InstallationTarget Version="[11.0,15.0)" Id="Microsoft.VisualStudio.Ultimate" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="4.5" />
+        <Dependency Id="Microsoft.VisualStudio.MPF.11.0" DisplayName="Visual Studio MPF 11.0" d:Source="Installed" Version="11.0" />
+    </Dependencies>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" Path="|%CurrentProject%|" />
+    </Assets>
+</PackageManifest>
