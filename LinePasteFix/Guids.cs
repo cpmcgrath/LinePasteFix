@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LinePasteFix
+namespace CMcG.LinePasteFix
 {
     static class GuidList
     {
