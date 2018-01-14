@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="LinePasteFix.CMcG.a2363b0b-ab89-427f-b36d-7bf3d6984f30" Version="8.0" Language="en-US" Publisher="Chris McGrath" />
+        <Identity Id="LinePasteFix.CMcG.a2363b0b-ab89-427f-b36d-7bf3d6984f30" Version="1.0" Language="en-US" Publisher="Chris McGrath" />
         <DisplayName>Line Paste Fix</DisplayName>
         <Description xml:space="preserve">In VS2010 when you paste a line copy, the caret goes to the beginning of the line. This extension mimics VS2008 behaviour of keeping it at the same place as before.</Description>
         <MoreInfo>https://marketplace.visualstudio.com/items?itemName=cpmcgrath.LinePasteFix</MoreInfo>
