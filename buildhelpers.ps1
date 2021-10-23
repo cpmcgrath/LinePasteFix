@@ -20,6 +20,6 @@ function UpdateVsVersion($project, $version)
             "[InstalledProductRegistration(`"#110`", `"#112`", `"$version`")]"
         
     Replace "./$project/source.extension.vsixmanifest" `
-            "Id=`"LinePasteFix.CMcG.a2363b0b-ab89-427f-b36d-7bf3d6984f30`" Version=`"[^`"]+`"" `
-            "Id=`"LinePasteFix.CMcG.a2363b0b-ab89-427f-b36d-7bf3d6984f30`" Version=`"$version`""
+            "a2363b0b-ab89-427f-b36d-7bf3d6984f30`" Version=`"[^`"]+`"" `
+            "a2363b0b-ab89-427f-b36d-7bf3d6984f30`" Version=`"$version`""
 }
