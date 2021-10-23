@@ -14,7 +14,7 @@ namespace CMcG.LinePasteFix
                                 cmdLineDelete = new Command("1496a755-94de-11d0-8c3f-00c04fc2aae2", 62),
                                 cmdLineCut    = new Command("1496a755-94de-11d0-8c3f-00c04fc2aae2", 61);
 
-        IWpfTextView m_view;
+        readonly IWpfTextView m_view;
 
         public CommandFilter(IWpfTextView view)
         {
@@ -25,6 +25,7 @@ namespace CMcG.LinePasteFix
 
         public int Exec(ref Guid pguidCmdGroup, uint nCmdID, uint nCmdexecopt, IntPtr pvaIn, IntPtr pvaOut)
         {
+            Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
             int index      = -1;
             bool isFixable = (IsLinePaste     (pguidCmdGroup, nCmdID)
                           ||  cmdCut       .Is(pguidCmdGroup, nCmdID) && m_view.Selection.IsEmpty
@@ -67,13 +68,13 @@ namespace CMcG.LinePasteFix
 
         public int QueryStatus(ref Guid pguidCmdGroup, uint cCmds, OLECMD[] prgCmds, IntPtr pCmdText)
         {
+            Microsoft.VisualStudio.Shell.ThreadHelper.ThrowIfNotOnUIThread();
             return Next.QueryStatus(ref pguidCmdGroup, cCmds, prgCmds, pCmdText);
         }
 
         public static void Register(IVsTextView textViewAdapter, CommandFilter filter)
         {
-            IOleCommandTarget next;
-            if (ErrorHandler.Succeeded(textViewAdapter.AddCommandFilter(filter, out next)))
+            if (ErrorHandler.Succeeded(textViewAdapter.AddCommandFilter(filter, out var next)))
                 filter.Next = next;
         }
     }
